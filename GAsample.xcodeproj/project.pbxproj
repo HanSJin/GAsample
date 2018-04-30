@@ -48,6 +48,7 @@
 		4906F1052096AFED002E4582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4906F10A2096AFED002E4582 /* GAsampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GAsampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4906F1152096AFED002E4582 /* GAsampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GAsampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		492C23072096B38D009C27FB /* GAsample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GAsample-Bridging-Header.h"; sourceTree = "<group>"; };
 		5A9AB78DE6DCA900EE433B6D /* Pods-GAsampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GAsampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GAsampleTests/Pods-GAsampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		81DABC68317F87B7BE92A85A /* Pods-GAsampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GAsampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GAsampleUITests/Pods-GAsampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F25DDF971E26F86ECBC3668B /* Pods-GAsample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GAsample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GAsample/Pods-GAsample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 				4906F0FB2096AFED002E4582 /* ViewController.swift */,
 				4906F0FD2096AFED002E4582 /* Main.storyboard */,
 				4906F1052096AFED002E4582 /* Info.plist */,
+				492C23072096B38D009C27FB /* GAsample-Bridging-Header.h */,
 			);
 			path = GAsample;
 			sourceTree = "<group>";
@@ -224,6 +226,7 @@
 				TargetAttributes = {
 					4906F0F52096AFED002E4582 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					4906F1092096AFED002E4582 = {
@@ -406,9 +409,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GAsample/Pods-GAsample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -603,12 +609,15 @@
 			baseConfigurationReference = F25DDF971E26F86ECBC3668B /* Pods-GAsample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z7BMLJLG67;
 				INFOPLIST_FILE = GAsample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hansjin.GAsample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GAsample/GAsample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -619,12 +628,14 @@
 			baseConfigurationReference = 29D35D1C2916FBB910C36D53 /* Pods-GAsample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z7BMLJLG67;
 				INFOPLIST_FILE = GAsample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hansjin.GAsample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GAsample/GAsample-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
