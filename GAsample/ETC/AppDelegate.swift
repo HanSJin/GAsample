@@ -18,16 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // MARK: - For Google Analytics.
-//        guard let gai = GAI.sharedInstance() else {
-//            assert(false, "Google Analytics not configured correctly")
-//        }
-//        gai.tracker(withTrackingId: "UA-47605289-8")
-//        // Optional: automatically report uncaught exceptions.
-//        gai.trackUncaughtExceptions = true
-//
-//        // Optional: set Logger to VERBOSE for debug information.
-//        // Remove before app release.
-//        gai.logger.logLevel = .verbose;
+        guard let gai = GAI.sharedInstance() else {
+            assert(false, "Google Analytics not configured correctly")
+        }
+        gai.tracker(withTrackingId: "UA-118387889-1")
+        // Optional: automatically report uncaught exceptions.
+        gai.trackUncaughtExceptions = true
+
+        // Optional: set Logger to VERBOSE for debug information.
+        // Remove before app release.
+        gai.logger.logLevel = .verbose;
         
         return true
     }
