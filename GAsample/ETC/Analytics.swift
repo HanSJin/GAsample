@@ -15,7 +15,7 @@ public class Analytics {
 
 extension Analytics {
     
-    func tracking(name screen: String, page: Int? = nil, description: String? = nil) {
+    func tracker(name screen: String, page: Int? = nil, description: String? = nil) {
         guard let tracker = GAI.sharedInstance().defaultTracker else { return }
         tracker.set(kGAIScreenName, value: screen)
         
@@ -28,5 +28,14 @@ extension Analytics {
         
         guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
         tracker.send(builder.build() as [NSObject : AnyObject])
+    }
+    
+    func event(category: String, action: String, label: String, value: Int) {
+        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
+        let event = GAIDictionaryBuilder.createEvent(withCategory: category,
+                                                     action: action,
+                                                     label: label,
+                                                     value: value as NSNumber).build() as [NSObject : AnyObject]
+        tracker.send(event)
     }
 }

@@ -18,14 +18,26 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        Analytics.default.tracking(name: "123", description: "sample")
+        Analytics.default.tracker(name: "MainViewController", description: "메인 페이지")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
+extension ViewController {
+    
+    @IBAction func tappedButton1(_ sender: Any) {
+        Analytics.default.event(category: "MainViewController", action: "touchUpInside", label: "Button1", value: 0)
+    }
+    
+    @IBAction func tappedButton2(_ sender: Any) {
+    
+    }
+    
+    @IBAction func tappedButton3(_ sender: Any) {
+    
+    }
+}
