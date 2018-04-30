@@ -13,14 +13,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        title = "MainVC"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        Analytics.default.tracker(name: "MainViewController", description: "메인 페이지")
+        GATracker.default.tracking(screen: "MainVC", description: "MainVC Desc")
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showNextVC" {
+            GATracker.default.event(category: "MainVC", action: "performSegue", label: "NextVC")
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -30,14 +37,10 @@ class ViewController: UIViewController {
 extension ViewController {
     
     @IBAction func tappedButton1(_ sender: Any) {
-        Analytics.default.event(category: "MainViewController", action: "touchUpInside", label: "Button1", value: 0)
+        GATracker.default.event(category: "MainVC", action: "touchUpInside", label: "Button1")
     }
     
-    @IBAction func tappedButton2(_ sender: Any) {
-    
-    }
-    
-    @IBAction func tappedButton3(_ sender: Any) {
-    
+    @IBAction func tappedNextButton(_ sender: Any) {
+        performSegue(withIdentifier: "showNextVC", sender: self)
     }
 }
