@@ -1,0 +1,6 @@
+framework module Pods_GAsampleTests {
+  umbrella header "Pods-GAsampleTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
