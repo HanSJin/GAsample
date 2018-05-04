@@ -20,9 +20,7 @@ class NextViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        GATracker.default.tracking(screen: "NextVC", description: "NextVC Desc")
-        
-        GAI.sharedInstance()?.dispatch()
+        GATracker.default.send(screen: self)
     }
     
     override func didReceiveMemoryWarning() {

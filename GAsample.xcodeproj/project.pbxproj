@@ -13,7 +13,8 @@
 		4906F0FF2096AFED002E4582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4906F0FD2096AFED002E4582 /* Main.storyboard */; };
 		4906F1012096AFED002E4582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4906F1002096AFED002E4582 /* Assets.xcassets */; };
 		4906F1042096AFED002E4582 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4906F1022096AFED002E4582 /* LaunchScreen.storyboard */; };
-		492C230B2096BDE1009C27FB /* GATracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492C230A2096BDE1009C27FB /* GATracker.swift */; };
+		49138CE1209C16AB0040BA9B /* GATracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49138CDF209C16AA0040BA9B /* GATracker.swift */; };
+		49138CE2209C16AB0040BA9B /* GATracker+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49138CE0209C16AB0040BA9B /* GATracker+Ext.swift */; };
 		492C230D2096CE3F009C27FB /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492C230C2096CE3F009C27FB /* NextViewController.swift */; };
 		834AEBC04D3E03FC1705F44F /* Pods_GAsample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5B3D3D5301F73A45493DA4 /* Pods_GAsample.framework */; };
 		E14314A5111BDB4ED6598C87 /* Pods_GAsampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000B6A00A8829BA15A7E6C1B /* Pods_GAsampleTests.framework */; };
@@ -50,8 +51,9 @@
 		4906F1052096AFED002E4582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4906F10A2096AFED002E4582 /* GAsampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GAsampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4906F1152096AFED002E4582 /* GAsampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GAsampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49138CDF209C16AA0040BA9B /* GATracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GATracker.swift; sourceTree = "<group>"; };
+		49138CE0209C16AB0040BA9B /* GATracker+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GATracker+Ext.swift"; sourceTree = "<group>"; };
 		492C23072096B38D009C27FB /* GAsample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GAsample-Bridging-Header.h"; sourceTree = "<group>"; };
-		492C230A2096BDE1009C27FB /* GATracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATracker.swift; sourceTree = "<group>"; };
 		492C230C2096CE3F009C27FB /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		5A9AB78DE6DCA900EE433B6D /* Pods-GAsampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GAsampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GAsampleTests/Pods-GAsampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		81DABC68317F87B7BE92A85A /* Pods-GAsampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GAsampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GAsampleUITests/Pods-GAsampleUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				4906F1272096B026002E4582 /* ETC */,
+				49138CDF209C16AA0040BA9B /* GATracker.swift */,
+				49138CE0209C16AB0040BA9B /* GATracker+Ext.swift */,
 				4906F0FB2096AFED002E4582 /* ViewController.swift */,
 				492C230C2096CE3F009C27FB /* NextViewController.swift */,
 				4906F0FD2096AFED002E4582 /* Main.storyboard */,
@@ -124,7 +128,6 @@
 		4906F1272096B026002E4582 /* ETC */ = {
 			isa = PBXGroup;
 			children = (
-				492C230A2096BDE1009C27FB /* GATracker.swift */,
 				4906F0F92096AFED002E4582 /* AppDelegate.swift */,
 				4906F1002096AFED002E4582 /* Assets.xcassets */,
 				4906F1022096AFED002E4582 /* LaunchScreen.storyboard */,
@@ -451,8 +454,9 @@
 			files = (
 				4906F0FC2096AFED002E4582 /* ViewController.swift in Sources */,
 				492C230D2096CE3F009C27FB /* NextViewController.swift in Sources */,
+				49138CE2209C16AB0040BA9B /* GATracker+Ext.swift in Sources */,
+				49138CE1209C16AB0040BA9B /* GATracker.swift in Sources */,
 				4906F0FA2096AFED002E4582 /* AppDelegate.swift in Sources */,
-				492C230B2096BDE1009C27FB /* GATracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

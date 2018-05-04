@@ -13,18 +13,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         title = "MainVC"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        GATracker.default.tracking(screen: "MainVC", description: "MainVC Desc")
+        GATracker.default.send(screen: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showNextVC" {
-            GATracker.default.event(category: "MainVC", action: "performSegue", label: "NextVC")
+            GATracker.default.send(event: GATracker.MainView.NEXT.event)
         }
     }
     
@@ -37,7 +38,7 @@ class ViewController: UIViewController {
 extension ViewController {
     
     @IBAction func tappedButton1(_ sender: Any) {
-        GATracker.default.event(category: "MainVC", action: "touchUpInside", label: "Button1")
+        GATracker.default.send(event: GATracker.MainView.BUTTON_01.event, label: "USER_ID")
     }
     
     @IBAction func tappedNextButton(_ sender: Any) {
